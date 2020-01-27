@@ -1,0 +1,27 @@
+/**
+ * Font Mixins
+ */
+
+// Kanit
+@mixin ff-kanit($style: null) {
+  font-family: "Kanit",Arial,Helvetica Neue,Helvetica,sans-serif;
+
+  @if $style == 'light' {
+    font-weight: 100;
+  } @else if $style == 'bold' {
+    font-weight: 700;
+  } @else {
+    font-weight: normal;
+  }
+}
+
+// Ubuntu Mono
+@mixin ff-ubuntu($style: null) {
+  font-family: "Ubuntu Mono",Consolas,monaco,monospace;
+
+  @if $style == 'bold' {
+    font-weight: 700;
+  } @else {
+    font-weight: normal;
+  }
+}

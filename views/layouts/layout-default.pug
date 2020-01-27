@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title=`${site.name} » ${title}`
+    link(rel="stylesheet", href="/static/fonts.css")
+    link(rel="stylesheet", href="/dist/client.css")
+    link(rel="shortcut icon", type="image/png", href="/assets/images/favicon.png")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+  body(class=`theme-default`)
+    block header
+      include ../includes/nav
+    main#main-content
+      block content
+
+    block footer
+      include ../includes/footer
+
+    block modals
+      include ../includes/modals
+
+    //- Loader
+    .page-loader
+
+    block scripts
+      script(src="/dist/client.js")

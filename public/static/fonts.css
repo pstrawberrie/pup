@@ -1,0 +1,38 @@
+/**
+ * Font Definitions
+ */
+
+/*--------*/
+/* Kanit Default */
+@font-face {
+  font-family: "Kanit";
+  src: url("/assets/fonts/Kanit-Regular.ttf") format("truetype");
+}
+
+/* Kanit Extra Light */
+@font-face {
+  font-family: "Kanit";
+  src: url("/assets/fonts/Kanit-ExtraLight.ttf") format("truetype");
+  font-weight: 100;
+}
+
+/* Kanit Black */
+@font-face {
+  font-family: "Kanit";
+  src: url("/assets/fonts/Kanit-Bold.ttf") format("truetype");
+  font-weight: 700;
+}
+
+/*--------*/
+/* Ubuntu Mono Default */
+@font-face {
+  font-family: "Ubuntu Mono";
+  src: url("/assets/fonts/UbuntuMono-Regular.ttf") format("truetype");
+}
+
+/* Ubuntu Mono Bold */
+@font-face {
+  font-family: "Ubuntu Mono";
+  src: url("/assets/fonts/UbuntuMono-Bold.ttf") format("truetype");
+  font-weight: 700;
+}

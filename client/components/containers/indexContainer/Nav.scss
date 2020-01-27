@@ -1,0 +1,23 @@
+/**
+ * Nav
+ */
+@import '../../../global/scss/util';
+
+.nav {
+  @include ff-kanit;
+
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+
+  &__main {
+    display: flex;
+    flex-wrap: nowrap;
+
+    &_link {
+      display: flex;
+      padding: 1.5rem 2.25rem;
+    }
+  }
+}

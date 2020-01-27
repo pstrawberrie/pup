@@ -1,0 +1,25 @@
+/**
+ * Colors
+ */
+
+// B+W
+$c-white: #fff;
+$c-black: #000;
+
+// Grays/Whites
+$c-gray-darkest: #161616;
+$c-gray-darker: #333;
+$c-gray-dark: #444;
+$c-gray: #888;
+$c-gray-light: #aaa;
+$c-gray-lighter: #bfbfbf;
+$c-gray-lightest: #dfdfdf;
+$c-offwhite: #efefef;
+
+// Status Colors
+$c-green-status: #3a3;
+$c-red-status: #a33;
+
+// Transparent Colors
+$c-transparent-lightest: rgba(255, 255, 255, 0.055);
+$c-transparent-lighter: rgba(255, 255, 255, 0.09);

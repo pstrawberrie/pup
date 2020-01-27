@@ -1,0 +1,60 @@
+{
+  "name": "pup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "cross-env concurrently -n Server,Client \"npm run dev:server\" \"npm run client:watch\"",
+    "dev:server": "cross-env nodemon -e js,pug server.js --colors",
+    "client:watch": "cross-env parcel watch ./client/client.js -d ./public/dist --public-url ./",
+    "client:build": "cross-env parcel build ./client/client.js -d ./public/dist --public-url ./",
+    "production:server": "cross-env node server.js",
+    "production": "npm run client:build && npm run production:server"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ],
+  "babel": {
+    "presets": [
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties",
+      "jsx-control-statements"
+    ]
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "client/*",
+      "dist/*",
+      "public/*",
+      "node_modules/*"
+    ],
+    "delay": "500"
+  },
+  "author": "pstrawberrie",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.8.3",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/preset-react": "^7.8.3",
+    "babel-plugin-jsx-control-statements": "^4.0.0",
+    "chalk": "^3.0.0",
+    "concurrently": "^5.0.2",
+    "cross-env": "^7.0.0",
+    "parcel-bundler": "^1.12.4",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-router-dom": "^5.1.2",
+    "sass": "^1.25.1-test.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.4",
+    "express": "^4.17.1",
+    "helmet": "^3.21.2",
+    "moment": "^2.24.0",
+    "pug": "^2.0.4"
+  }
+}

@@ -1,0 +1,16 @@
+/**
+ * Dark Theme
+ */
+
+body.theme-dark {
+  background-color: $c-gray-darkest;
+  color: $c-offwhite;
+
+  .nav {
+    background-color: $c-transparent-lightest;
+
+    &__main_link.active {
+      background-color: $c-transparent-lightest;
+    }
+  }
+}

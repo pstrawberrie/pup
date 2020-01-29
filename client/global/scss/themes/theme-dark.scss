@@ -7,12 +7,34 @@ body.theme-dark {
   color: $c-white;
 
   // Forms Generic
-  input,
-  textarea {
-    background-color: $c-offwhite;
-    color: $c-gray-darkest;
-    border-color: $c-gray-lighter;
-    background: $c-gray-lightest;
+  form,
+  .form {
+    input,
+    textarea {
+      background-color: $c-offwhite;
+      color: $c-gray-darkest;
+      border-color: $c-gray-lighter;
+      background: $c-gray-lightest;
+    }
+
+    &__submit {
+      background-color: $c-green-status-dark;
+      color: $c-white;
+
+      &[disabled] {
+        background-color: $c-red-status;
+      }
+    }
+
+    .error,
+    &__error {
+      color: $c-red-status;
+
+      input,
+      textarea {
+        color: $c-red-status;
+      }
+    }
   }
 
   // Nav
@@ -30,6 +52,15 @@ body.theme-dark {
 
     &:hover {
       background-color: $c-transparent-lightest;
+    }
+
+    &--submit {
+      color: $c-white;
+      background-color: $c-green-status;
+
+      &:hover {
+        background-color: $c-green-status;
+      }
     }
   }
 
@@ -73,8 +104,9 @@ body.theme-dark {
 
   // Schedule Page
   .schedule {
-    &__form_label {
-      color: $c-black;
+    .form__error {
+      background-color: $c-red-status-dark;
+      color: $c-white;
     }
   }
 }

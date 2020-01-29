@@ -28,35 +28,18 @@
     }
   }
 
-  // Form Modal
-  &__form {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-
-    &_title {
-      @include ff-title;
-
-      font-size: 2rem;
-      margin-bottom: 2rem;
+  // Form overrides
+  .form {
+    &__content {
+      padding: 2.5rem $content-area-padding;
     }
 
-    label {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 1.75rem;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-
-    &_label {
+    &__error {
       @include ff-title;
 
-      text-transform: uppercase;
-      font-size: 0.9rem;
-      padding-bottom: 0.5rem;
+      padding: 1.5rem $content-area-padding;
+      font-size: 1.25rem;
+      margin: 0;
     }
   }
 }

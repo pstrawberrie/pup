@@ -84,6 +84,10 @@
     overflow-x: hidden;
     overflow-y: auto;
 
+    &.no-padding {
+      padding: 0;
+    }
+
     //CSSTransition
     // transform: scale(0.65);
     // transition: transform $anim-time-default $anim-effect-default;
@@ -119,45 +123,46 @@
       border-radius: 2px;
 
       //CSSTransition: Scale in
-      // transform: rotate(45deg) scale(0);
-      // transition: transform $anim-time-default $anim-effect-default;
-      // transition-delay: 0.15s;
-
-      // .modal.anim-enter-active &,
-      // .modal.anim-enter-done & { transform: rotate(45deg) scale(1); }
-
-      // .modal.anim-exit &,
-      // .modal.anim-exit-done & { transform: rotate(45deg) scale(0); }
-
-      //CSSTransition: Opacity + Rotate in
       transform-origin: center;
-      transform: rotate(0deg);
-      opacity: 0;
-      transition: opacity $anim-time-default $anim-effect-default, transform $anim-time-slow $anim-effect-default;
-      transition-delay: 0.09s;
+      transform: rotate(45deg) scale(0);
+      transition: transform $anim-time-default $anim-effect-default;
+      transition-delay: 0.1s;
 
       .modal.anim-enter-active &,
-      .modal.anim-enter-done & { transform: rotate(135deg); opacity: 1; }
+      .modal.anim-enter-done & { transform: rotate(45deg) scale(1); }
 
       .modal.anim-exit &,
-      .modal.anim-exit-done & { transform: rotate(0deg); opacity: 0; }
+      .modal.anim-exit-done & { transform: rotate(45deg) scale(0); }
+
+      //CSSTransition: Opacity + Rotate in
+      // transform-origin: center;
+      // transform: rotate(0deg);
+      // opacity: 0;
+      // transition: opacity $anim-time-default $anim-effect-default, transform $anim-time-slow $anim-effect-default;
+      // transition-delay: 0.09s;
+
+      // .modal.anim-enter-active &,
+      // .modal.anim-enter-done & { transform: rotate(135deg); opacity: 1; }
+
+      // .modal.anim-exit &,
+      // .modal.anim-exit-done & { transform: rotate(0deg); opacity: 0; }
     }
     &_icon::before {
       //CSSTransition: Scale in
-      // transform: rotate(-45deg) scale(0);
+      transform: rotate(-45deg) scale(0);
 
-      // .modal.anim-enter-active &,
-      // .modal.anim-enter-done & { transform: rotate(-45deg) scale(1); }
-
-      // .modal.anim-exit &,
-      // .modal.anim-exit-done & { transform: rotate(-45deg) scale(0); }
-
-      //CSSTransition: Opacity + Rotate in
       .modal.anim-enter-active &,
-      .modal.anim-enter-done & { transform: rotate(-135deg); opacity: 1; }
+      .modal.anim-enter-done & { transform: rotate(-45deg) scale(1); }
 
       .modal.anim-exit &,
-      .modal.anim-exit-done & { transform: rotate(0deg); opacity: 0; }
+      .modal.anim-exit-done & { transform: rotate(-45deg) scale(0); }
+
+      //CSSTransition: Opacity + Rotate in
+      // .modal.anim-enter-active &,
+      // .modal.anim-enter-done & { transform: rotate(-135deg); opacity: 1; }
+
+      // .modal.anim-exit &,
+      // .modal.anim-exit-done & { transform: rotate(0deg); opacity: 0; }
     }
   }
 }

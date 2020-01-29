@@ -1,0 +1,78 @@
+/**
+ * Forms Styling
+ */
+
+form,
+.form {
+  @include ff-title;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  label {
+    display: block;
+    margin-bottom: 1.75rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &.invalid input,
+    &.invalid textarea {
+      border: 2px solid transparent;
+    }
+  }
+
+  input,
+  textarea {
+    @include ff-title;
+
+    width: 100%;
+    padding: 0.55rem 1rem;
+  }
+
+  textarea {
+    min-height: 100px;
+  }
+
+  &__label {
+    display: block;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    padding-bottom: 0.5rem;
+  }
+
+  &__error {
+    font-size: 1.05rem;
+    margin-bottom: 1rem;
+  }
+
+  &__info {
+    font-size: 0.9rem;
+    margin-top: 0.4rem;
+  }
+
+  &__submit {
+    @include ff-title;
+
+    position: relative;
+    display:block;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 1.25rem 2rem;
+    width: 100%;
+    margin-top: 0.75rem;
+
+    transition: opacity $anim-time-default $anim-effect-default;
+
+    &[disabled],
+    &.loading {
+      opacity: 0.75;
+    }
+
+    &[disabled] {
+      cursor: not-allowed;
+    }
+  }
+}

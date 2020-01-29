@@ -1,0 +1,26 @@
+/**
+ * Size Variables
+ */
+
+// Max Widths
+$site-max-width-default: 1600px;
+$site-max-width-small: 1440px;
+$site-max-width-large: 1920px;
+$site-max-width: $site-max-width-default;
+
+// Side Paddings
+$side-padding-default: 16px;
+$side-padding-small: 10px;
+$side-padding-large: 30px;
+$side-padding: $side-padding-default;
+
+// Area Paddings
+$content-area-padding-default: 2.75rem;
+$content-area-padding-small: 1.75rem;
+$content-area-padding-large: 3.5rem;
+$content-area-padding: $content-area-padding-default;
+
+// Misc.
+$modal-max-width-desktop: 45%;
+$modal-max-width-mobile: 85%;
+$modal-max-height: 80%;

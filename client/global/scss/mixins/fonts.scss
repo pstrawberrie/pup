@@ -2,8 +2,8 @@
  * Font Mixins
  */
 
-// Kanit
-@mixin ff-kanit($style: null) {
+// Title Font
+@mixin ff-title($style: null) {
   font-family: "Kanit",Arial,Helvetica Neue,Helvetica,sans-serif;
 
   @if $style == 'light' {
@@ -15,8 +15,8 @@
   }
 }
 
-// Ubuntu Mono
-@mixin ff-ubuntu($style: null) {
+// Body Font
+@mixin ff-body($style: null) {
   font-family: "Ubuntu Mono",Consolas,monaco,monospace;
 
   @if $style == 'bold' {

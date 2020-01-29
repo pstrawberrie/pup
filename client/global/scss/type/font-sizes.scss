@@ -2,22 +2,48 @@
  * Font Sizes
  */
 
+// Headings
 h1 {
   font-size: 4rem;
+
+  @include bp-down(tablet) {
+    font-size: 2.75rem;
+  }
 }
 
 h2 {
   font-size: 3rem;
+
+  @include bp-down(tablet) {
+    font-size: 2.2rem;
+  }
 }
 
 h3 {
   font-size: 2.5rem;
+
+  @include bp-down(tablet) {
+    font-size: 2rem;
+  }
 }
 
 h4 {
   font-size: 2rem;
+
+  @include bp-down(tablet) {
+    font-size: 1.75rem;
+  }
 }
 
 h5 {
   font-size: 1.5rem;
+}
+
+// Forms
+input {
+  font-size: 1.1rem;
+}
+
+textarea {
+  font-size: 0.9rem;
 }

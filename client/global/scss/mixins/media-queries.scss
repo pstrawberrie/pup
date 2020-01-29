@@ -9,5 +9,13 @@
 
 // Max Width Breakpoints
 @mixin bp-down($val) {
-  @media (min-width: em-calc(map-get($breakpoints-max, $val))) {@content;}
+  @media (max-width: em-calc(map-get($breakpoints-max, $val))) {@content;}
+}
+
+// Offset Site Width Padding
+@mixin offset-side-padding($max-width) {
+  @media (max-width: $max-width + $side-padding) {
+    padding-left: $side-padding;
+    padding-right: $side-padding;
+  }
 }

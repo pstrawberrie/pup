@@ -4,13 +4,77 @@
 
 body.theme-dark {
   background-color: $c-gray-darkest;
-  color: $c-offwhite;
+  color: $c-white;
 
+  // Forms Generic
+  input,
+  textarea {
+    background-color: $c-offwhite;
+    color: $c-gray-darkest;
+    border-color: $c-gray-lighter;
+    background: $c-gray-lightest;
+  }
+
+  // Nav
   .nav {
     background-color: $c-transparent-lightest;
 
     &__main_link.active {
       background-color: $c-transparent-lightest;
+    }
+  }
+
+  // Cta
+  .cta {
+    border-color: $c-white;
+
+    &:hover {
+      background-color: $c-transparent-lightest;
+    }
+  }
+
+  // Loader
+  .loader {
+    background-color: $c-transparent-darker;
+
+    &__inner {
+      border-top: 1.1em solid $c-transparent-dark;
+      border-right: 1.1em solid $c-transparent-dark;
+      border-bottom: 1.1em solid $c-transparent-dark;
+      border-left: 1.1em solid $c-white;
+    }
+  }
+
+  // Modal
+  .modal {
+    &__title {
+      color: $c-white;
+      background-color: $c-gray-darkest;
+    }
+
+    &__screen {
+      background-color: $c-transparent-darker;
+    }
+
+    &__inner {
+      background-color: $c-offwhite;
+      color: $c-gray-darkest;
+    }
+
+    &__inner_close {
+      background-color: $c-black;
+    }
+
+    &__inner_close_icon::before,
+    &__inner_close_icon::after {
+      background-color: $c-white;
+    }
+  }
+
+  // Schedule Page
+  .schedule {
+    &__form_label {
+      color: $c-black;
     }
   }
 }

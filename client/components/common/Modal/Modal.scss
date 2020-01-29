@@ -1,0 +1,163 @@
+/**
+ * Modal Component
+ */
+@import '~style-utils';
+
+.modal {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: $z-modal;
+
+  //CSSTransition
+  &.anim-enter,
+  &.anim-enter-done,
+  &.anim-exit {
+    display: flex;
+  }
+
+  // Modal Screen
+  &__screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    //CSSTransition
+    opacity: 0;
+    transition: all $anim-time-default $anim-effect-default;
+
+    .modal.anim-enter-active &,
+    .modal.anim-enter-done & { opacity: 1; }
+
+    .modal.anim-exit &,
+    .modal.anim-exit-done & { opacity: 0; }
+  }
+
+  // Modal Title
+  &__title {
+    @include ff-title;
+
+    position: relative;
+    font-size: 2rem;
+    padding: $content-area-padding-small $content-area-padding;
+  }
+
+  // Modal Inner
+  &__inner {
+    @include shadow-2;
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: $modal-max-width-mobile;
+    max-height: $modal-max-height;
+    border-radius: 2px;
+
+    @include bp-up(tablet) {
+      max-width: $modal-max-width-desktop;
+    }
+
+    //CSSTransition
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity $anim-time-default $anim-effect-default, transform $anim-time-default $anim-effect-default;
+
+    .modal.anim-enter-active &,
+    .modal.anim-enter-done & { opacity: 1; transform: scale(1); }
+
+    .modal.anim-exit &,
+    .modal.anim-exit-done & { opacity: 0; transform: scale(0.9); }
+  }
+
+  // Modal Inner Content
+  &__inner_content {
+    position: relative;
+    padding: 2.5rem $content-area-padding;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    //CSSTransition
+    // transform: scale(0.65);
+    // transition: transform $anim-time-default $anim-effect-default;
+    // transition-delay: 0.025s;
+
+    // .modal.anim-enter-active &,
+    // .modal.anim-enter-done & { transform: scale(1); }
+
+    // .modal.anim-exit &,
+    // .modal.anim-exit-done & { transform: scale(0.65); }
+  }
+
+  // Modal Inner Close
+  &__inner_close {
+    @include shadow-3;
+
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    position: absolute;
+    top: -18px;
+    right: -18px;
+    font-size: 2.8rem;
+
+    &_icon::after,
+    &_icon::before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: 13px;
+      width: 26px;
+      height: 4px;
+      border-radius: 2px;
+
+      //CSSTransition: Scale in
+      // transform: rotate(45deg) scale(0);
+      // transition: transform $anim-time-default $anim-effect-default;
+      // transition-delay: 0.15s;
+
+      // .modal.anim-enter-active &,
+      // .modal.anim-enter-done & { transform: rotate(45deg) scale(1); }
+
+      // .modal.anim-exit &,
+      // .modal.anim-exit-done & { transform: rotate(45deg) scale(0); }
+
+      //CSSTransition: Opacity + Rotate in
+      transform-origin: center;
+      transform: rotate(0deg);
+      opacity: 0;
+      transition: opacity $anim-time-default $anim-effect-default, transform $anim-time-slow $anim-effect-default;
+      transition-delay: 0.09s;
+
+      .modal.anim-enter-active &,
+      .modal.anim-enter-done & { transform: rotate(135deg); opacity: 1; }
+
+      .modal.anim-exit &,
+      .modal.anim-exit-done & { transform: rotate(0deg); opacity: 0; }
+    }
+    &_icon::before {
+      //CSSTransition: Scale in
+      // transform: rotate(-45deg) scale(0);
+
+      // .modal.anim-enter-active &,
+      // .modal.anim-enter-done & { transform: rotate(-45deg) scale(1); }
+
+      // .modal.anim-exit &,
+      // .modal.anim-exit-done & { transform: rotate(-45deg) scale(0); }
+
+      //CSSTransition: Opacity + Rotate in
+      .modal.anim-enter-active &,
+      .modal.anim-enter-done & { transform: rotate(-135deg); opacity: 1; }
+
+      .modal.anim-exit &,
+      .modal.anim-exit-done & { transform: rotate(0deg); opacity: 0; }
+    }
+  }
+}

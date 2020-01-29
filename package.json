@@ -11,6 +11,9 @@
     "production:server": "cross-env node server.js",
     "production": "npm run client:build && npm run production:server"
   },
+  "alias": {
+    "style-utils": "./client/global/scss/util.scss"
+  },
   "browserslist": [
     "last 2 versions"
   ],
@@ -19,6 +22,7 @@
       "@babel/preset-react"
     ],
     "plugins": [
+      "@babel/plugin-transform-runtime",
       "@babel/plugin-proposal-class-properties",
       "jsx-control-statements"
     ]
@@ -37,7 +41,9 @@
   "devDependencies": {
     "@babel/core": "^7.8.3",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.8.3",
     "@babel/preset-react": "^7.8.3",
+    "autoprefixer": "^9.7.4",
     "babel-plugin-jsx-control-statements": "^4.0.0",
     "chalk": "^3.0.0",
     "concurrently": "^5.0.2",
@@ -46,15 +52,21 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-router-dom": "^5.1.2",
+    "react-transition-group": "^4.3.0",
     "sass": "^1.25.1-test.1"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "body-parser": "^1.19.0",
     "compression": "^1.7.4",
     "cookie-parser": "^1.4.4",
     "express": "^4.17.1",
     "helmet": "^3.21.2",
+    "lowdb": "^1.0.0",
     "moment": "^2.24.0",
-    "pug": "^2.0.4"
+    "moment-timezone": "^0.5.27",
+    "pug": "^2.0.4",
+    "shortid": "^2.2.15",
+    "validator": "^12.2.0"
   }
 }

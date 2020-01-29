@@ -4,6 +4,7 @@
 
 // GET index
 exports.index = async (req, res) => {
+  const path = req.path;
 
   // test promise func
   function getData() {
@@ -17,6 +18,7 @@ exports.index = async (req, res) => {
   const data = await getData();
 
   res.render('index', {
+    path,
     title: 'Home',
     data
   });

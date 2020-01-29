@@ -1,0 +1,21 @@
+{
+  "schedule": [
+    {
+      "id": "test1",
+      "datetime": "test1",
+      "timezone": "test1",
+      "note": "note"
+    },
+    {
+      "id": "test2",
+      "datetime": "test2",
+      "timezone": "test2"
+    },
+    {
+      "datetime": "somedate123213",
+      "timezone": "sometimezone1111",
+      "note": "123123some notes great long notes go suck a fuck",
+      "id": "ADGSWXpy"
+    }
+  ]
+}

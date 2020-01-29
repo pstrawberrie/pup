@@ -1,0 +1,52 @@
+/**
+ * Hero Component
+ */
+@import '~style-utils';
+
+.hero {
+
+  &__inner {
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    &_content {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      width: auto;
+      padding: 2rem 1rem;
+
+      @include bp-up(tablet) {
+        padding: 3.75rem 0;
+      }
+
+      @include offset-side-padding($site-max-width);
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  &__headline,
+  &__copy {
+    position: relative;
+  }
+
+  &__copy {
+    padding: 0.9rem 0 0 0;
+  }
+
+  .cta {
+    margin: 3.5rem auto 0 auto;
+  }
+}

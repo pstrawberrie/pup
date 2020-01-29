@@ -1,0 +1,62 @@
+/**
+ * Schedule Page
+ */
+@import '~style-utils';
+
+.schedule {
+  position: relative;
+
+  // Items Container
+  &__items {
+    @include offset-side-padding($site-max-width);
+
+    position: relative;
+    display: flex;
+    padding-top: $content-area-padding;
+    padding-bottom: $content-area-padding;
+  }
+
+  // Single Items
+  &__item {
+    //@TODO: STYLE THIS (move colors out)
+    padding: 0.4rem;
+    border: 1px solid $c-gray;
+    margin-right: 0.5rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  // Form Modal
+  &__form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    &_title {
+      @include ff-title;
+
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    label {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1.75rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &_label {
+      @include ff-title;
+
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      padding-bottom: 0.5rem;
+    }
+  }
+}

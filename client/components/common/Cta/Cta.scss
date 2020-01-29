@@ -1,0 +1,17 @@
+/**
+ * Cta Component
+ */
+@import '~style-utils';
+
+.cta {
+  position: relative;
+  align-self: flex-start;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  transition: background-color $anim-time-default $anim-effect-default;
+
+  &_arrow {
+    font-size: 1.1em;
+  }
+}

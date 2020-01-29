@@ -6,10 +6,12 @@ const config = {
   development: {
     isProd: false,
     webPort: 3000,
+    dbFile: './db.json',
   },
   production: {
     isProd: true,
     webPort: 3000,
+    dbFile: './db.json',
   },
 }
 

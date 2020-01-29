@@ -16,6 +16,8 @@ const moment = require('moment');
 const errorHandlers = require('./handlers/errorHandlers.js');
 const siteLocals = require('./locals.js');
 
+const connectDb = require('./db.js');
+
 // Middlewares
 app.use(helmet());
 app.use(compression({}));
@@ -45,7 +47,18 @@ if (app.get('env') === 'development') {
 
 app.use(errorHandlers.productionErrors);
 
-// Start Web Server
-app.listen(config.webPort, () => {
-  console.log(chalk.yellow(`+++ Web Server Started on localhost:${config.webPort} +++`));
-});
+// Start Server
+connectDb().then(db => {
+  console.log(chalk.yellow(`+++ DB Connected +++`));
+
+  db.read()
+  .then(() => {
+    console.log(chalk.green(`+++ DB OK +++`));
+
+    app.listen(config.webPort, () => {
+      console.log(chalk.green(`+++ Web Server Started on localhost:${config.webPort} +++`));
+    });
+  });
+})
+
+

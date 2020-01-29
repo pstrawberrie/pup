@@ -1,10 +1,10 @@
 /**
  * Nav
  */
-@import '../../../global/scss/util';
+@import '~style-utils';
 
 .nav {
-  @include ff-kanit;
+  @include ff-title;
 
   position: relative;
   display: flex;
@@ -17,7 +17,7 @@
 
     &_link {
       display: flex;
-      padding: 1.5rem 2.25rem;
+      padding: 0.6rem 1.75rem;
     }
   }
 }

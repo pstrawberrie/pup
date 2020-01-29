@@ -18,25 +18,69 @@
 // Themes
 @import './themes/index';
 
-// Base Styling
+/**
+ * Globals
+ */
+// Body/Html
 body, html {
   width: 100%;
   height: 100%;
 }
 html { font-size: 16px; }
 body {
+  @include ff-body;
+
   font-size: 100%;
-  @include ff-ubuntu;
 }
 
+// Link Styling
 a,
 a:visited,
 a:active {
   color: inherit;
   text-decoration: none;
+  font-weight: normal;
 }
 
+// Form Styling
 input,
 textarea {
-  box-sizing: border-box;
+  @include ff-title;
+
+  padding: 0.55rem 1rem;
+}
+
+// Common Layout Styling
+.area {
+  padding-left: $side-padding;
+  padding-right: $side-padding;
+}
+
+.area-mobile {
+  @include bp-down(tablet) {
+    padding-left: $side-padding;
+    padding-right: $side-padding;
+  }
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: $site-max-width;
+}
+
+// Accessibility
+.sr-only {
+	border: 0 !important;
+	clip: rect(1px, 1px, 1px, 1px) !important;
+	-webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+	height: 1px !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	padding: 0 !important;
+	position: absolute !important;
+	width: 1px !important;
+	white-space: nowrap !important;
 }

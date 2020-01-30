@@ -3,36 +3,21 @@
  */
 
 /*--------*/
-/* Kanit Default */
+/* Lato Regular */
 @font-face {
-  font-family: "Kanit";
-  src: url("/assets/fonts/Kanit-Regular.ttf") format("truetype");
+  font-family: "Lato";
+  src: url("/assets/fonts/Lato-Regular.ttf") format("truetype");
 }
 
-/* Kanit Extra Light */
+/* Lato Bold */
 @font-face {
-  font-family: "Kanit";
-  src: url("/assets/fonts/Kanit-ExtraLight.ttf") format("truetype");
-  font-weight: 100;
+  font-family: "Lato";
+  src: url("/assets/fonts/Lato-Bold.ttf") format("truetype");
+  font-weight: bold;
 }
 
-/* Kanit Black */
+/* Bebas Neue */
 @font-face {
-  font-family: "Kanit";
-  src: url("/assets/fonts/Kanit-Bold.ttf") format("truetype");
-  font-weight: 700;
-}
-
-/*--------*/
-/* Ubuntu Mono Default */
-@font-face {
-  font-family: "Ubuntu Mono";
-  src: url("/assets/fonts/UbuntuMono-Regular.ttf") format("truetype");
-}
-
-/* Ubuntu Mono Bold */
-@font-face {
-  font-family: "Ubuntu Mono";
-  src: url("/assets/fonts/UbuntuMono-Bold.ttf") format("truetype");
-  font-weight: 700;
+  font-family: "Bebas Neue";
+  src: url("/assets/fonts/BebasNeue-Regular.ttf") format("truetype");
 }

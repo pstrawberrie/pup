@@ -3,28 +3,119 @@
  */
 @import '~style-utils';
 
+//@TODO: MOVE COLORS OUT
 .schedule {
   position: relative;
 
-  // Items Container
-  &__items {
-    @include offset-side-padding($site-max-width);
-
+  // Events Container
+  &__events {
     position: relative;
     display: flex;
-    padding-top: $content-area-padding;
-    padding-bottom: $content-area-padding;
+    width: 100%;
+
+    @include bp-down(desktop) {
+      flex-direction: column;
+    }
   }
 
-  // Single Items
-  &__item {
-    //@TODO: STYLE THIS (move colors out)
-    padding: 0.4rem;
-    border: 1px solid $c-gray;
-    margin-right: 0.5rem;
+  &__column {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 14.2%;
+    background-color: $c-black;
+    border-left: 2px solid $c-gray;//@TODO: move colors out
+    border-right: 2px solid $c-gray;//@TODO: move colors out
+    border-bottom: 2px solid $c-gray;//@TODO: move colors out
 
+    &:first-child {
+      border-left: 4px solid $c-gray;//@TODO: move colors out
+    }
     &:last-child {
-      margin-right: 0;
+      border-right: 4px solid $c-gray;//@TODO: move colors out
+    }
+
+    @include bp-down(desktop) {
+      border-bottom: 0;
+
+      &:last-child {
+        border-bottom: 2px solid $c-gray;
+      }
+    }
+
+    //alternating colors
+    .schedule__event {
+      background-color:rgba(255,255,255,.05);
+
+      &:nth-child(even) {
+        background-color:rgba(255,255,255,.1);
+      }
+    }
+    &:nth-child(even) {
+      .schedule__event {
+        background-color:rgba(255,255,255,.1);
+
+        &:nth-child(even) {
+          background-color:rgba(255,255,255,.05);
+        }
+      }
+    }
+
+    &_title {
+      @include ff-title;
+
+      padding: 1.25rem 0;
+      font-size: 1.3rem;
+      text-align: center;
+      border-top: 2px solid $c-gray;//@TODO: move colors out
+      border-bottom: 2px solid $c-gray;//@TODO: move colors out
+    }
+  }
+
+  // Single Event
+  &__event {
+    position: relative;
+    display: flex;
+    height: 100%;
+
+    @include bp-down(desktop) {
+      height: auto;
+    }
+
+    &_datetime {
+      height: 100%;
+      min-width: 85px;
+      max-width: 85px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem 0;
+      font-size: 1rem;
+      font-weight: bold;
+      text-align: left;
+      align-self: flex-start;
+      background-color: rgba(255, 255, 255, 0.1);
+
+      @include bp-down(desktop) {
+        height: auto;
+        align-self: auto;
+      }
+
+      span {
+        display: inline-block;
+        padding-left: 0.1rem;
+        font-size: 0.7rem;
+        font-weight: normal;
+        text-transform: uppercase;
+      }
+    }
+
+    &_note {
+      display: flex;
+      align-items: center;
+      line-height: 1.2;
+      padding: 0.75rem;
     }
   }
 

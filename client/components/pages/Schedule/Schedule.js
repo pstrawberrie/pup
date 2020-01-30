@@ -107,16 +107,34 @@ export default class Schedule extends React.Component {
   // Render
   render() {
     // Map Items Helper
-    const renderItems = this.state.schedule.map(event => {
-      const formattedDatetime = moment.tz(event.datetime, event.timezone).format("MMM D @ h:SSa")
+    const datesByWeek = Object.keys(this.state.schedule);
+    const sortedDatesByWeek = datesByWeek.sort((a,b) => moment(a).format('YYYYMMDD') - moment(b).format('YYYYMMDD'));
+
+    const renderItems = sortedDatesByWeek.map((day, index) => {
+      // Week Columns
+      const formattedDay = moment(new Date(day)).utc().format('MMM D');
+      const unsortedDayArr = this.state.schedule[day];
+      const sortedDayArr = unsortedDayArr.sort((a,b) => moment(a.datetime).format('YYYYMMDD') - moment(b.datetime).format('YYYYMMDD')).reverse();
+
       return(
-        <div className="schedule__item" key={event.id}>
-          <span className="schedule__item_datetime">
-            <time dateTime={formattedDatetime}>{formattedDatetime}</time>
-          </span>
-          <span className="schedule__item_note">
-            {event.note}
-          </span>
+        <div className="schedule__column" key={index}>
+          <span className="schedule__column_title">{formattedDay}</span>
+
+          {sortedDayArr.map(event => {
+            const formattedTime = moment(event.datetime).format('h:mm');
+            const formattedA = moment(event.datetime).format('A');
+            const formattedDatetime = moment(event.datetime).format();
+            return(
+              <div className="schedule__event" key={event.id}>
+                <span className="schedule__event_datetime">
+                  <time dateTime={formattedDatetime}>{formattedTime}<span>{formattedA}</span></time>
+                </span>
+                <span className="schedule__event_note">
+                  {event.note}
+                </span>
+              </div>
+            )
+          })}
         </div>
       );
     });
@@ -167,7 +185,7 @@ export default class Schedule extends React.Component {
                     <div className="form__content">
                       <label htmlFor="datetime"
                             className={errors.datetime && touched.datetime && 'error'}>
-                        <span className="form__label">DateTime<span className="required">*</span></span>
+                        <span className="form__label">Date & Time<span className="required">*</span></span>
                         <input
                           name="datetime"
                           id="datetime"
@@ -198,7 +216,7 @@ export default class Schedule extends React.Component {
             </Formik>
           </Modal>
         </Hero>
-        <div className="schedule__items container">
+        <div className="schedule__events">
           {renderItems}
         </div>
       </section>

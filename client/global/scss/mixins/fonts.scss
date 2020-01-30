@@ -3,24 +3,17 @@
  */
 
 // Title Font
-@mixin ff-title($style: null) {
-  font-family: "Kanit",Arial,Helvetica Neue,Helvetica,sans-serif;
-
-  @if $style == 'light' {
-    font-weight: 100;
-  } @else if $style == 'bold' {
-    font-weight: 700;
-  } @else {
-    font-weight: normal;
-  }
+@mixin ff-title {
+  font-family: "Bebas Neue",Arial,Helvetica Neue,Helvetica,sans-serif;
+  font-weight: normal;
 }
 
 // Body Font
 @mixin ff-body($style: null) {
-  font-family: "Ubuntu Mono",Consolas,monaco,monospace;
+  font-family: "Lato",Consolas,monaco,monospace;
 
   @if $style == 'bold' {
-    font-weight: 700;
+    font-weight: bold;
   } @else {
     font-weight: normal;
   }
